@@ -1,0 +1,38 @@
+//Quadratic formula(Advanced) //
+#include<stdio.h>
+
+#include<math.h>
+
+int main()
+{
+    double a, b, c, D, R1, R2, realPart, imgPart;
+
+    printf("Enter a:\n");
+    scanf_s("%lf",&a);
+
+    printf("Enter b:\n");
+    scanf_s("%lf", &b);
+
+    printf("Enter c:\n");
+    scanf_s("%lf", &c);
+    
+    D = (b*b)-4*(a*c);
+    if(D > 0)
+    {
+        R1 =(-b + sqrt(D)) / (2*a);
+        R2 = (-b - sqrt(D)) / (2*a);
+        printf("R1=%lf, R2=%lf", R1, R2 );
+    }
+    else if(D==0)
+    {
+        R1 = R2 = -b / (2*a);
+        printf("R1=R2:%lf", R1);
+    }
+    else
+    {
+        realPart = -b / (2*a);
+        imgPart = sqrt(-D) / (2*a);
+        printf("R1=%lf+%lf and R2=%lf-%lf" , realPart, imgPart, realPart, imgPart);
+    }
+    return 0;
+}
